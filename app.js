@@ -1,9 +1,5 @@
 
 
-function bgColor(){
-
-}
-
 function clickWithElement(withElement,price){
     const memoryCost = document.getElementById( withElement +'-cost')
     memoryCost.innerText = price;
@@ -20,9 +16,11 @@ function allCost(){
     
     const deliveryPrice = document.getElementById('delivery-cost').innerText;
 
-    const totalPrice = document.getElementById('total-price').innerText = parseInt(bestPrice) +parseInt(memoryPrice) +parseInt(storagePrice) + parseInt(deliveryPrice);
-
+    const totalPrice = document.getElementById('total-price')
+     totalPrice.innerText = parseInt(bestPrice) +parseInt(memoryPrice) +parseInt(storagePrice) + parseInt(deliveryPrice);
+    // return totalPrice;
 }
+
 
 
 document.getElementById('memoryFrist-field').addEventListener('click',function(){
@@ -30,7 +28,7 @@ document.getElementById('memoryFrist-field').addEventListener('click',function()
 
     allCost();
 
-    document.getElementById('total-price').innerText = memory8gbTotal
+    document.getElementById('total-price').innerText ;
 
 })
 
@@ -39,7 +37,7 @@ document.getElementById('memorySecond-field').addEventListener('click',function(
 
     allCost();
 
-    document.getElementById('total-price').innerText = memory16gbTotal
+    document.getElementById('total-price').innerText
 
 })
 document.getElementById('storageFrist-field').addEventListener('click',function(){
@@ -47,40 +45,67 @@ document.getElementById('storageFrist-field').addEventListener('click',function(
 
     allCost();
 
-    document.getElementById('total-price').innerText = storage256Total
+    document.getElementById('total-price').innerText 
 
 })
 
 document.getElementById('storageSecond-field').addEventListener('click',function(){
-ckWithElement('storage',100);
+    clickWithElement('storage',100);
 
     allCost();
-    document.getElementById('total-price').innerText = storage512Total
+
+    document.getElementById('total-price').innerText
+
+})
 
     
-})
+
 
 document.getElementById('storageThird-field').addEventListener('click',function(){
     clickWithElement('storage',180);
     
     allCost();
-
-    document.getElementById('total-price').innerText = storage1tbTotal
+    
+    document.getElementById('total-price').innerText 
 
 
 })
 document.getElementById('deliveryFrist-field').addEventListener('click',function(){
     clickWithElement('delivery',0);
-
     allCost();
-
-    document.getElementById('total-price').innerText = deliveryfree
+    document.getElementById('total-price').innerText
 
 })
+
 document.getElementById('deliverySecond-field').addEventListener('click',function(){
     clickWithElement('delivery',20);
 
     allCost();
 
-    document.getElementById('total-price').innerText = deliveryfree20
+    document.getElementById('total-price').innerText
 })
+
+
+document.getElementById('submit-pomo').addEventListener('click',function(){
+
+    const promoInput = document.getElementById('promo-input')
+   const neww = document.getElementById('total-price').innerText 
+   
+if(promoInput.value == 'stevekaku'){
+    const discount = parseInt(neww - (neww*20 / 100));
+    document.getElementById('total-discount').innerText = discount
+    promoInput.value = '';
+   
+
+}    
+
+    
+//     document.getElementById('total-price').innerText = in
+    
+//   const grandtotalPrice = totalPrice/2
+//   console.log(grandtotalPrice)
+
+ 
+})
+
+
