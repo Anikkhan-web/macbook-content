@@ -1,6 +1,6 @@
 function clickWithElement(withElement,price){
-    const memoryCost = document.getElementById( withElement +'-cost')
-    memoryCost.innerText = price;
+    const elementCost = document.getElementById( withElement +'-cost')
+    elementCost.innerText = price;
     grandTotalCost()
 }
 
@@ -13,7 +13,6 @@ function grandTotalCost(){
     
     totalPrice.innerText = parseInt(bestPrice) +parseInt(memoryPrice) +parseInt(storagePrice) + parseInt(deliveryPrice);
 
-    // const totalPrice = document.getElementById('total-price');
 
     const grandTotal =  document.getElementById('grand-total');
      grandTotal.innerText = totalPrice.innerText ;
